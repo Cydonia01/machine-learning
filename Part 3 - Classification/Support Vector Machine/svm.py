@@ -20,7 +20,7 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Fitting Logistic Regression to the Training set
+# Training the SVM model on the Training set
 classifier = SVC(kernel='linear', random_state=0)  # Using SVM with a linear kernel
 classifier.fit(X_train, y_train)
 

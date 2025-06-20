@@ -8,7 +8,7 @@ dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values  # Feature matrix (independent variable)
 y = dataset.iloc[:, 2].values  # Target vector (dependent variable)
 
-# Training the Decision Tree Regression model on the whole dataset
+# Training the Random Forest Regression model on the whole dataset
 regressor = RandomForestRegressor(n_estimators=10, random_state=0)
 regressor.fit(X, y)
 
