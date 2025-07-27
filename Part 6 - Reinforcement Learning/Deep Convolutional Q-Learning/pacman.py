@@ -1,23 +1,13 @@
 from collections import deque
-import os
 import random
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
-import torch.autograd as autograd
-from torch.autograd import Variable
-from torch.utils.data import DataLoader, Dataset
 import gymnasium as gym
-import glob
-import io
-import base64
 import imageio
-from IPython.display import HTML, display
-from gymnasium.wrappers import RecordVideo
 import webbrowser
-from gymnasium.envs.registration import registry
 from ale_py import ALEInterface
 
 ale = ALEInterface()
