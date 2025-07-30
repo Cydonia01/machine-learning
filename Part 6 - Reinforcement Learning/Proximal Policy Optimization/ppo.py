@@ -10,16 +10,17 @@ from torch.distributions import MultivariateNormal
 from tqdm import tqdm
 
 # Setting the hyperparameters
-hidden_dim = 256
-lr_actor = 3e-4
-lr_critic = 1e-3
-gamma = 0.99
-gae_lambda = 0.95
-ppo_epochs = 10
-mini_batch_size = 64
-ppo_clip = 0.2
-buffer_size = 2048
-action_std = 0.5  # Standard deviation for action exploration
+HIDDEN_DIM = 256
+LR_ACTOR = 3e-4
+LR_CRITIC = 1e-3
+GAMMA = 0.99
+GAE_LAMBDA = 0.95
+PPO_EPOCHS = 10
+MINI_BATCH_SIZE = 64
+PPO_CLIP = 0.2
+BUFFER_SIZE = 2048
+ACTION_STD = 0.5  # Standard deviation for action exploration
+ENV_NAME = 'CarRacing-v3'
 
 # Building the Actor-Critic Network
 class ActorCritic(nn.Module):
@@ -27,26 +28,33 @@ class ActorCritic(nn.Module):
     def __init__(self, num_actions):
         super(ActorCritic, self).__init__()
         # Common layers
-        self.conv1 = nn.Conv2d(3, 32, kernel_size=8, stride=4)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=4, stride=2)
-        self.conv3 = nn.Conv2d(64, 64, kernel_size=3, stride=1)
-        self.fc1 = nn.Linear(64 * 8 * 8, hidden_dim)
+        self.conv = nn.Sequential(
+            nn.Conv2d(3, 32, kernel_size=8, stride=4),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=4, stride=2),
+            nn.ReLU(),
+            nn.Conv2d(64, 64, kernel_size=3, stride=1),
+            nn.ReLU(),
+            nn.Flatten(),
+            nn.Linear(64 * 8 * 8, HIDDEN_DIM),
+            nn.ReLU()
+        )
+        
         # Actor layers
-        self.fc_actor = nn.Linear(hidden_dim, num_actions)
+        self.fc_actor = nn.Linear(HIDDEN_DIM, num_actions)
         self.log_std = nn.Parameter(torch.zeros(num_actions))
+
         # Critic layers
-        self.fc_critic = nn.Linear(hidden_dim, 1)
+        self.fc_critic = nn.Linear(HIDDEN_DIM, 1)
 
     def forward(self, state):
-        x = F.relu(self.conv1(state))
-        x = F.relu(self.conv2(x))
-        x = F.relu(self.conv3(x))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
+        x = self.conv(state)
+        
         # Actor
         action_mean = self.fc_actor(x)
         action_var = torch.exp(self.log_std.expand_as(action_mean))
         cov_mat = torch.diag_embed(action_var)
+        
         # Critic
         value = self.fc_critic(x)
         return action_mean, cov_mat, value
@@ -73,10 +81,10 @@ class PPO:
 
     def __init__(self, num_actions):
         self.policy = ActorCritic(num_actions)
-        self.optimizer = optim.Adam(self.policy.parameters(), lr=lr_actor)
+        self.optimizer = optim.Adam(self.policy.parameters(), lr=LR_ACTOR, weight_decay=0)
         self.policy_old = ActorCritic(num_actions)
         self.policy_old.load_state_dict(self.policy.state_dict())
-        self.MseLoss = nn.MSELoss()
+        self.mse_loss = nn.MSELoss()
 
     def select_action(self, state):
         with torch.no_grad():
@@ -84,7 +92,9 @@ class PPO:
             dist = MultivariateNormal(action_mean, cov_mat)
             action = dist.sample()
             action_logprob = dist.log_prob(action)
-            action_clipped = torch.clamp(action, -1, 1)  # Clipping action to valid range
+            action_low = torch.tensor([-1.0, 0.0, 0.0], device=action.device)
+            action_high = torch.tensor([1.0, 1.0, 1.0], device=action.device)
+            action_clipped = torch.clamp(action, min=action_low, max=action_high)
         return action_clipped.detach().numpy().flatten(), action_logprob.detach()
 
     def update(self, memory):
@@ -94,33 +104,40 @@ class PPO:
         for reward, is_terminal in zip(reversed(memory.rewards), reversed(memory.is_terminals)):
             if is_terminal:
                 discounted_reward = 0
-            discounted_reward = reward + (gamma * discounted_reward)
+            discounted_reward = reward + (GAMMA * discounted_reward)
             rewards.insert(0, discounted_reward)
+            
         # Normalizing the rewards
         rewards = torch.tensor(rewards, dtype=torch.float32).unsqueeze(1)
         rewards = (rewards - rewards.mean()) / (rewards.std() + 1e-7)
+        
         # Converting list to tensor
         old_states = torch.stack(memory.states).detach()
         old_actions = torch.stack(memory.actions).detach()
         old_logprobs = torch.stack(memory.logprobs).detach()
+        
         # Optimizing policy for K epochs
-        for _ in range(ppo_epochs):
+        for _ in range(PPO_EPOCHS):
             # Evaluating old actions and values
             action_means, action_vars, state_values = self.policy(old_states)
             dists = MultivariateNormal(action_means, action_vars)
             logprobs = dists.log_prob(old_actions)
             dist_entropy = -logprobs.mean()
+            
             # Finding the ratio (pi_theta / pi_theta__old)
             ratios = torch.exp(logprobs - old_logprobs.detach())
+            
             # Finding Surrogate Loss
             advantages = rewards - state_values.detach()
             surr1 = ratios * advantages
-            surr2 = torch.clamp(ratios, 1-ppo_clip, 1+ppo_clip) * advantages
-            loss = -torch.min(surr1, surr2) + 0.5*self.MseLoss(state_values, rewards) - 0.01*dist_entropy
+            surr2 = torch.clamp(ratios, 1 - PPO_CLIP, 1 + PPO_CLIP) * advantages
+            loss = -torch.min(surr1, surr2) + 0.5 * self.mse_loss(state_values, rewards) - 0.01 * dist_entropy
+
             # Taking gradient step
             self.optimizer.zero_grad()
             loss.mean().backward()
             self.optimizer.step()
+        
         # Copying new weights into old policy
         self.policy_old.load_state_dict(self.policy.state_dict())
 
@@ -132,18 +149,21 @@ def preprocess_state(state):
     return state.unsqueeze(0)
 
 # Setting up the environment
-env = gym.make('CarRacing-v3', render_mode = 'rgb_array')
+env = gym.make(ENV_NAME)
 num_actions = env.action_space.shape[0]
 memory = Memory()
 ppo = PPO(num_actions)
 
 # Implementing the Training Loop
-total_timesteps = 100000
-update_timestep = buffer_size
+total_timesteps = 2048
+update_timestep = BUFFER_SIZE
 state, _ = env.reset()
 state = preprocess_state(state)
 
-for t in tqdm(range(1, total_timesteps + 1), desc = "Training"):
+episode_reward = 0
+pbar = tqdm(total=total_timesteps, desc="Training", leave=True)
+
+for t in range(1, total_timesteps + 1):
     action, action_logprob = ppo.select_action(state)
     next_state, reward, terminated, truncated, _ = env.step(action)
     done = terminated or truncated
@@ -156,18 +176,28 @@ for t in tqdm(range(1, total_timesteps + 1), desc = "Training"):
     memory.is_terminals.append(done)
     
     state = next_state
+    episode_reward += reward
+    
     if done:
         state, _ = env.reset()
         state = preprocess_state(state)
+        pbar.set_postfix({'Episode Reward': episode_reward})
+        episode_reward = 0
+        
     if t % update_timestep == 0:
         ppo.update(memory)
         memory.clear_memory()
+    
+    pbar.update(1)
+
+pbar.close()
 
 # Saving the model
 torch.save(ppo.policy.state_dict(), 'ppo_model.pth')
 
 # Loading the model
 # ppo.policy.load_state_dict(torch.load('ppo_model.pth'))
+# ppo.policy_old.load_state_dict(ppo.policy.state_dict())
 
 # Visualizing the results
 def show_video_of_model(agent, env_name):
@@ -186,5 +216,5 @@ def show_video_of_model(agent, env_name):
     env.close()
     imageio.mimsave('video.mp4', frames, fps=60)
     
-show_video_of_model(ppo, 'CarRacing-v3')
+show_video_of_model(ppo, ENV_NAME)
 webbrowser.open('video.mp4')
