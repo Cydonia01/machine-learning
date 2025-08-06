@@ -2,8 +2,6 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TensorFlow warnings
 os.environ['TF_USE_LEGACY_KERAS'] = 'True'  # Use legacy Keras for compatibility
 
-import numpy as np
-import tensorflow as tf
 import ktrain
 from ktrain import text
 
