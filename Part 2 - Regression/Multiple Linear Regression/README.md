@@ -1,10 +1,10 @@
-# 📈 Multiple Linear Regression
+# Multiple Linear Regression
 
 This project demonstrates how to train and visualize a **Multiple Linear Regression** model using a regression dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Predict the salary based on multiple features:
 - **R&D Spend**
@@ -14,7 +14,7 @@ Predict the salary based on multiple features:
 
 ---
 
-## 📁 Files
+## Files
 
 - `50_Startups.csv`: Dataset used for training/testing. Can be found in the parent directory.
 - `multipleLinearRegression.py`: Main Python script with the full model pipeline for multiple linear regression.
@@ -22,7 +22,7 @@ Predict the salary based on multiple features:
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Data Preprocessing**
     - Import data
@@ -38,7 +38,7 @@ Predict the salary based on multiple features:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure the dataset `50_Startups.csv` is in the same directory or update the path in the code.
 2. Run the script:
@@ -46,13 +46,13 @@ Predict the salary based on multiple features:
     python multipleLinearRegression.py
     ```
 
-### 📊 Results
+## Results
 
 - Prints the actual vs predicted salary values.
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `numpy`
 - `pandas`

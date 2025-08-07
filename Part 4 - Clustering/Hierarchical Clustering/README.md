@@ -1,10 +1,10 @@
-# 🤖 Hierarchical Clustering
+# Hierarchical Clustering
 
 This project demonstrates how to perform and visualize **Hierarchical Clustering** using the `Mall_Customers.csv` dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Group users into clusters based on:
 - **Annual Income**
@@ -12,7 +12,7 @@ Group users into clusters based on:
 
 ---
 
-## 📁 Files
+## Files
 
 - `Mall_Customers.csv`: Dataset used for clustering. Can be found in parent directory.
 - `hierarchical.py`: Main Python script with full clustering pipeline.
@@ -20,7 +20,7 @@ Group users into clusters based on:
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Data Preprocessing**
     - Import data
@@ -37,7 +37,7 @@ Group users into clusters based on:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure the dataset `Mall_Customers.csv` is in the same directory or update the path in the code.
 2. Run the script:
@@ -45,14 +45,14 @@ Group users into clusters based on:
     python hierarchical.py
     ```
 
-### 📊 Results
+## Results
 
 - Dendrogram is displayed to help select the number of clusters.
 - Scatter plot shows clustered data points.
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `matplotlib`
 - `pandas`

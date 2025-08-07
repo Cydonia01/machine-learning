@@ -1,10 +1,10 @@
-# 🤖 Support Vector Machine Classification
+# Support Vector Machine Classification
 
 This project demonstrates how to train and visualize a **Support Vector Machine (SVM) Classifier** using the `Social_Network_Ads.csv` dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Classify whether a user purchased a product based on:
 - **Age**
@@ -12,7 +12,7 @@ Classify whether a user purchased a product based on:
 
 ---
 
-## 📁 Files
+## Files
 
 - `Social_Network_Ads.csv`: Dataset used for training/testing. Can be found in parent directory.
 - `svm.py`: Main Python script with full model pipeline.
@@ -20,7 +20,7 @@ Classify whether a user purchased a product based on:
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Data Preprocessing**
     - Import data
@@ -37,7 +37,7 @@ Classify whether a user purchased a product based on:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure the dataset `Social_Network_Ads.csv` is in the same directory or update the path in the code.
 2. Run the script:
@@ -45,7 +45,7 @@ Classify whether a user purchased a product based on:
     python svm.py
     ```
 
-### 📊 Results
+## Results
 
 - Accuracy is printed in the console.
 - Two plots are generated:
@@ -54,7 +54,7 @@ Classify whether a user purchased a product based on:
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `numpy`
 - `matplotlib`

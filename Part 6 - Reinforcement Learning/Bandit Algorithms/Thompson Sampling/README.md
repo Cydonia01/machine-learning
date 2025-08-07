@@ -1,15 +1,15 @@
-# 🎯 Thompson Sampling
+# Thompson Sampling
 This project demonstrates the implementation of the **Thompson Sampling** algorithm to optimize ad selection in a simulated environment using the `Ads_CTR_Optimisation.csv` dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Select the best ad to display to users in order to **maximize click-through rate (CTR)** using a probabilistic approach.
 
 ---
 
-## 📁 Files
+## Files
 
 - `Ads_CTR_Optimisation.csv`: Simulated dataset of user interactions with 10 ads. Can be found in the parent directory.
 - `thompson.py`: Python script implementing the Thompson Sampling algorithm.
@@ -17,7 +17,7 @@ Select the best ad to display to users in order to **maximize click-through rate
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Dataset Overview**
     - Each row simulates one user impression.
@@ -37,7 +37,7 @@ Select the best ad to display to users in order to **maximize click-through rate
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure the dataset `Ads_CTR_Optimisation.csv` is in the same directory or update the path in the script.
 2. Run the script:
@@ -47,7 +47,7 @@ Select the best ad to display to users in order to **maximize click-through rate
 
 ---
 
-## 📊 Output
+## Output
 
 A histogram will be displayed:
 
@@ -58,7 +58,7 @@ The distribution shows how Thompson Sampling converges toward the optimal ad ove
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `numpy`
 - `matplotlib`

@@ -1,10 +1,10 @@
-# 🌲 Random Forest Regression
+# Random Forest Regression
 
 This project demonstrates how to train and visualize a **Random Forest Regressor** using a regression dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Predict the salary based on:
 - **Position**
@@ -12,7 +12,7 @@ Predict the salary based on:
 
 ---
 
-## 📁 Files
+## Files
 
 - `Position_Salaries.csv`: Dataset used for training/testing. Can be found in the parent directory.
 - `rfregression.py`: Main Python script with full model pipeline.
@@ -20,7 +20,7 @@ Predict the salary based on:
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Data Preprocessing**
     - Import data
@@ -34,7 +34,7 @@ Predict the salary based on:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Make sure the dataset `Position_Salaries.csv` is in the same directory or update the path in the code.
 2. Run the script:
@@ -42,13 +42,13 @@ Predict the salary based on:
     python rfregression.py
     ```
 
-### 📊 Results
+## Results
 
 - Plots are generated to visualize regression predictions and decision boundaries.
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `numpy`
 - `matplotlib`
