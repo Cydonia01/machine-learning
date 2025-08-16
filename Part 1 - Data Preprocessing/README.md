@@ -1,10 +1,10 @@
-# 🧹 Data Preprocessing
+# Data Preprocessing
 
 This project demonstrates how to preprocess data for machine learning tasks using a regression dataset.
 
 ---
 
-## 📌 Objective
+## Objective
 
 Prepare the dataset for modeling by:
 - Handling missing values
@@ -13,14 +13,14 @@ Prepare the dataset for modeling by:
 
 ---
 
-## 📁 Files
+## Files
 
 - `Data.csv`: Raw dataset for preprocessing.
 - `preprocessing.py`: Main Python script for all preprocessing steps.
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Import Data**
     - Load dataset using `pandas`
@@ -35,7 +35,7 @@ Prepare the dataset for modeling by:
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Ensure `Data.csv` is available in the directory or update the path in the script.
 2. Run the preprocessing script:
@@ -45,7 +45,7 @@ Prepare the dataset for modeling by:
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - `numpy`
 - `pandas`
