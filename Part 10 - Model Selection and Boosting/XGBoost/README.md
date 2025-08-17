@@ -7,7 +7,7 @@ This project demonstrates the use of XGBoost, a popular gradient boosting librar
 ## Overview
 
 - **Task**: Binary classification with boosting
-- **Dataset**: `Data.csv`
+- **Dataset**: `Data.csv`. Can be found in parent directory
 - **Frameworks**: scikit-learn, xgboost, numpy, pandas
 - **Input**: Feature matrix (X), binary target (y)
 - **Output**: Predicted class labels

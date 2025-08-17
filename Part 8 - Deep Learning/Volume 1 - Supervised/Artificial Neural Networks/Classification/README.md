@@ -58,4 +58,3 @@ pip install tensorflow pandas numpy scikit-learn
 
 - [TensorFlow Documentation](https://www.tensorflow.org/)
 - [Keras API](https://keras.io/)
-- [Churn Modelling Dataset](https://www.kaggle.com/datasets/shubhendra7/churn-modelling)

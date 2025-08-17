@@ -56,4 +56,3 @@ pip install tensorflow pandas numpy scikit-learn
 
 - [TensorFlow Documentation](https://www.tensorflow.org/)
 - [Keras API](https://keras.io/)
-- [Power Plant Dataset](https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant)

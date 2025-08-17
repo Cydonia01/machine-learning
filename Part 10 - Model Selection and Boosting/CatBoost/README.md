@@ -7,7 +7,7 @@ This project demonstrates the use of CatBoost, a gradient boosting library, for 
 ## Overview
 
 - **Task**: Binary classification with boosting
-- **Dataset**: `Data.csv`
+- **Dataset**: `Data.csv`. Can be found in parent directory
 - **Frameworks**: scikit-learn, catboost, numpy, pandas
 - **Input**: Feature matrix (X), binary target (y)
 - **Output**: Predicted class labels

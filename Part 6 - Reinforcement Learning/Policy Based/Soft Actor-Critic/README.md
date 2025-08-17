@@ -22,22 +22,25 @@ Make sure the required dependencies are installed:
 pip install torch gymnasium[box2d,accept-rom-license] imageio opencv-python
 
 ```
+
 Make sure to accept the Box2D license when prompted by Gymnasium.
 
 ## Training
-To train the PPO agent:
+
+To train the SAC agent:
 
 ```bash
-python ppo.py
+python sac.py
 ```
-
-- Trains for 2048 timesteps for experimental purposes (can be increased for better performance)
-- Updates the policy every 2048 steps (buffer size)
+- Trains the agent for a configurable number of episodes (default: 5 for demo/testing)
 - Displays live progress with tqdm
 
 ## Features
+
 - Continuous action sampling using MultivariateNormal
 - State preprocessing (normalization + channel-first)
-- On-policy buffer with advantage estimation
+- Replay buffer for off-policy learning
+- Dual Q-network for stability
+- Target network soft updates
 - Video logging and playback
-- Modular class-based structure (ActorCritic, PPO, Memory)
+- Modular class-based structure (Actor, Critic, Memory)

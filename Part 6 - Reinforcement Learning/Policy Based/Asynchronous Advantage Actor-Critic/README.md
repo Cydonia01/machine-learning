@@ -4,7 +4,7 @@ This project implements an **A3C (Advantage Actor-Critic)** reinforcement learni
 
 ## Overview
 
-- **Environment**: [KungFuMaster-v4](https://gymnasium.farama.org/environments/atari/kung_fu_master/)
+- **Environment**: [KungFuMaster-v4](https://ale.farama.org/environments/kung_fu_master/)
 - **RL Algorithm**: Advantage Actor-Critic (A3C variant)
 - **Deep Learning Framework**: PyTorch
 - **Environment Wrapper**: Frame stacking + grayscale + resizing for efficient learning

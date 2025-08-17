@@ -8,7 +8,7 @@ The agent learns to control a continuous-action car using policy gradient method
 
 ## Overview
 
-- **Environment**: [`CarRacing-v3`](https://gymnasium.farama.org/environments/box2d/car_racing/)
+- **Environment**: [CarRacing-v3](https://gymnasium.farama.org/environments/box2d/car_racing/)
 - **Algorithm**: [Proximal Policy Optimization (PPO)](https://arxiv.org/abs/1707.06347)
 - **Deep Learning Framework**: PyTorch
 - **Action Space**: Continuous `[steering, gas, brake]`
@@ -23,23 +23,24 @@ Install the required packages:
 ```bash
 pip install torch gymnasium[box2d,accept-rom-license] imageio tqdm numpy
 ```
+
 Accept the license for Box2D when prompted by Gymnasium.
 
 ## Training
-To train the SAC agent:
+
+To train the PPO agent:
 
 ```bash
-python sac.py
+python ppo.py
 ```
-
-- Trains the agent over 5 episodes (for quick demo/testing)
-- Uses a replay buffer with soft target updates
+- Trains for a configurable number of timesteps (default: 2048 for demo)
+- On-policy updates every 2048 steps
 - Automatically saves model checkpoints (.pth files)
 
 ## Features
-- Soft Actor-Critic for continuous control
-- Replay buffer with experience sampling
-- Dual Q-network for stability
-- Target network soft updates
+
+- Proximal Policy Optimization (PPO) for continuous control
+- On-policy buffer with advantage estimation
+- Clipped surrogate objective for stable policy updates
 - Grayscale image preprocessing
 - MP4 video export of agent behavior

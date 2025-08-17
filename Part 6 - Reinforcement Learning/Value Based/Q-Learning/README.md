@@ -1,4 +1,4 @@
-# Q-Learning for Route Planning in a Graph Environment (NumPy)
+# Q-Learning for Route Planning in a Graph Environment
 
 This project demonstrates a simple **Q-Learning** algorithm for finding the optimal route between locations in a graph-based environment using **NumPy**.
 
@@ -58,8 +58,3 @@ python q_learning.py
 - Change the number of training iterations for faster or more thorough learning
 
 ---
-
-## References
-
-- [Q-Learning (Wikipedia)](https://en.wikipedia.org/wiki/Q-learning)
-- [Reinforcement Learning: An Introduction (Sutton & Barto)](http://incompleteideas.net/book/the-book.html)

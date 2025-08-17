@@ -15,24 +15,6 @@ Grid search is used to systematically work through multiple combinations of para
 - Use `GridSearchCV` from scikit-learn to perform the search
 - Evaluate the best model on a test set
 
-### Example Usage
-
-```python
-from sklearn.model_selection import GridSearchCV
-from sklearn.svm import SVC
-
-# Define model and parameter grid
-model = SVC()
-param_grid = {'C': [0.1, 1, 10], 'kernel': ['linear', 'rbf']}
-
-# Grid search
-grid_search = GridSearchCV(model, param_grid, cv=5)
-grid_search.fit(X_train, y_train)
-
-print('Best parameters:', grid_search.best_params_)
-print('Best cross-validation score:', grid_search.best_score_)
-```
-
 ---
 
 ## 2. General Model Selection Script

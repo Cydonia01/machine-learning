@@ -1,6 +1,41 @@
 # Machine Learning & Deep Learning Learning Journey
 
-## Current Directory Structure
+This repository is a comprehensive, project-based collection of machine learning and deep learning code examples.
+
+**Note:** This repository was created by following the tutorials from [SuperDataScience](https://www.superdatascience.com/), adapting and organizing the content for hands-on learning and reference. It is intended as a self-curated resource to reinforce theory through practical code, rather than as a step-by-step tutorial series.
+
+## Topics Covered
+
+### Machine Learning
+
+- **Regression**: Linear, Polynomial, SVR, Decision Tree, Random Forest
+- **Classification**: Logistic, KNN, SVM, Naive Bayes, Decision Trees, Random Forest
+- **Clustering**: K-Means, Hierarchical
+- **Association Rules**: Apriori, Eclat
+- **Model Selection**: Cross-validation, Grid Search, Boosting (XGBoost, CatBoost)
+
+### Deep Learning
+
+- **ANNs** for classification and regression
+- **CNNs** for image classification (cats vs. dogs)
+- **RNNs** for sequence modeling
+- **Autoencoders, SOMs, Boltzmann Machines** for unsupervised learning
+
+### Reinforcement Learning
+
+- **Bandit algorithms**: Thompson Sampling, UCB
+- **Value-based**: Q-Learning, Deep Q-Learning
+- **Policy-based**: PPO, A3C, Soft Actor-Critic
+- **Deep RL**: Deep Convolutional Q-Learning
+
+### NLP & LLMs
+
+- **Text preprocessing**, tokenization, sentiment analysis
+- **Large Language Models** (BERT, GPT-2, etc.)
+
+---
+
+## Directory Structure
 
 ```
 ├── Model Selection/
@@ -71,37 +106,6 @@ Each folder contains:
 
 ---
 
-## Topics Covered
-
-### Machine Learning
-
-- **Regression**: Linear, Polynomial, SVR, Decision Tree, Random Forest
-- **Classification**: Logistic, KNN, SVM, Naive Bayes, Decision Trees, Random Forest
-- **Clustering**: K-Means, Hierarchical
-- **Association Rules**: Apriori, Eclat
-- **Model Selection**: Cross-validation, Grid Search, Boosting (XGBoost, CatBoost)
-
-### Deep Learning
-
-- **ANNs** for classification and regression
-- **CNNs** for image classification (cats vs. dogs)
-- **RNNs** for sequence modeling
-- **Autoencoders, SOMs, Boltzmann Machines** for unsupervised learning
-
-### Reinforcement Learning
-
-- **Bandit algorithms**: Thompson Sampling, UCB
-- **Value-based**: Q-Learning, Deep Q-Learning
-- **Policy-based**: PPO, A3C, Soft Actor-Critic
-- **Deep RL**: Deep Convolutional Q-Learning
-
-### NLP & LLMs
-
-- **Text preprocessing**, tokenization, sentiment analysis
-- **Large Language Models** (BERT, GPT-2, etc.)
-
----
-
 ## How to Run
 
 1. Clone the repository:
@@ -119,17 +123,24 @@ Small datasets and models are included in the repo. For large files (videos, .pt
 ## Tools & Libraries
 
 - Python 3.10+
-- Scikit-learn
-- NumPy
-- Pandas
-- Matplotlib
-- TensorFlow
-- Keras
-- PyTorch
-- OpenCV
-- NLTK
-- Hugging Face Transformers (for LLMs)
-
-## Notes
-
-- This repository is not a tutorial series, but a self-curated, project-based notebook to reinforce theory through code.
+- scikit-learn
+- numpy
+- pandas
+- matplotlib
+- tensorflow
+- keras
+- torch (PyTorch)
+- opencv-python
+- nltk
+- transformers (Hugging Face)
+- datasets (Hugging Face)
+- evaluate (Hugging Face)
+- ktrain
+- catboost
+- xgboost
+- minisom
+- bitsandbytes
+- peft
+- trl
+- tqdm
+- imageio

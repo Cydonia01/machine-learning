@@ -64,4 +64,4 @@ pip install torch transformers datasets evaluate numpy
 - [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
 - [Hugging Face Datasets](https://huggingface.co/docs/datasets/index)
 - [DistilBERT Paper](https://arxiv.org/abs/1910.01108)
-- [IMDB Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)
+- [IMDB Dataset](https://huggingface.co/datasets/stanfordnlp/imdb)

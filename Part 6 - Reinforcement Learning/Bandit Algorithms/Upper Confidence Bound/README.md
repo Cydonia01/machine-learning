@@ -37,7 +37,7 @@ Select the best ad to display to users in order to **maximize click-through rate
 
 ---
 
-## ▶How to Run
+## How to Run
 
 1. Make sure the dataset `Ads_CTR_Optimisation.csv` is in the same directory or update the path in the script.
 2. Run the script:

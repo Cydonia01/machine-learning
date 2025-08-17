@@ -69,5 +69,4 @@ Download MovieLens datasets from:
 ## References
 
 - [PyTorch Documentation](https://pytorch.org/)
-- [MovieLens Datasets](https://grouplens.org/datasets/movielens/)
 - [RBMs for Collaborative Filtering (Blog)](https://www.datacamp.com/tutorial/recommender-systems-python)

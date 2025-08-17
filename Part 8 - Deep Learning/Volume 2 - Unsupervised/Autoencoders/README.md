@@ -68,5 +68,3 @@ Download MovieLens datasets from:
 ## References
 
 - [PyTorch Documentation](https://pytorch.org/)
-- [MovieLens Datasets](https://grouplens.org/datasets/movielens/)
-- [Autoencoders for Collaborative Filtering (Blog)](https://towardsdatascience.com/autoencoders-for-collaborative-filtering-6c4cf4d9cd4f)

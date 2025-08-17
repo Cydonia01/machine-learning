@@ -7,7 +7,7 @@ This project demonstrates the use of Kernel Principal Component Analysis (Kernel
 ## Overview
 
 - **Task**: Dimensionality reduction and classification
-- **Dataset**: `Wine.csv`
+- **Dataset**: `Wine.csv`. Can be found in parent directory
 - **Frameworks**: scikit-learn, matplotlib, numpy, pandas
 - **Input**: Wine features (continuous variables)
 - **Output**: Predicted wine class

@@ -6,7 +6,7 @@ This project implements a **Deep Q-Network (DQN)** agent using deep convolutiona
 
 ## Overview
 
-- **Environment**: [`MsPacman-v4`](https://gymnasium.farama.org/environments/atari/ms_pacman/)
+- **Environment**: [MsPacman-v4](https://ale.farama.org/environments/ms_pacman/)
 - **Algorithm**: [Deep Q-Network (DQN)](https://www.nature.com/articles/nature14236)
 - **Frameworks**: PyTorch, Gymnasium
 - **Action Space**: Discrete (game actions)
@@ -64,8 +64,3 @@ If you can't load the environment from Gymnasium, you can find the ROM file for 
 - Training and evaluation videos (`training_video.mp4`, `video.mp4`)
 
 ---
-
-## References
-
-- [DeepMind DQN Paper (Mnih et al., 2015)](https://www.nature.com/articles/nature14236)
-- [Gymnasium MsPacman Environment](https://gymnasium.farama.org/environments/atari/ms_pacman/)

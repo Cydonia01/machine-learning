@@ -14,7 +14,7 @@ Classify whether a user purchased a product based on:
 
 ## Files
 
-- `Social_Network_Ads.csv`: Dataset used for training/testing. Can be ound in parent directory.
+- `Social_Network_Ads.csv`: Dataset used for training/testing. Can be found in parent directory.
 - `decisiontree.py`: Main Python script with full model pipeline.
 - Visualizations of decision boundaries for both training and test sets.
 

@@ -47,22 +47,6 @@ pip install tensorflow numpy keras
 
 ---
 
-## Directory Structure
-
-```
-dataset/
-    training_set/
-        cats/
-        dogs/
-    test_set/
-        cats/
-        dogs/
-    single_prediction/
-        cat_or_dog.jpg
-```
-
----
-
 ## Output
 
 - Prints class indices and the predicted class for a sample image

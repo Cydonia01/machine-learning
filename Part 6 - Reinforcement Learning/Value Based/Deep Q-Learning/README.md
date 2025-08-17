@@ -6,7 +6,7 @@ This project implements a **Deep Q-Network (DQN)** agent to solve the **LunarLan
 
 ## Overview
 
-- **Environment**: [`LunarLander-v3`](https://gymnasium.farama.org/environments/box2d/lunar_lander/)
+- **Environment**: [LunarLander-v3](https://gymnasium.farama.org/environments/box2d/lunar_lander/)
 - **Algorithm**: [Deep Q-Network (DQN)](https://www.nature.com/articles/nature14236)
 - **Frameworks**: PyTorch, Gymnasium
 - **Action Space**: Discrete (4 actions: do nothing, fire left, fire main, fire right)
@@ -63,8 +63,7 @@ python lunar_lander.py
 
 ## Note
 
-- You can find the trained model checkpoint (`checkpoint.pth`), videos (`training_video.mp4`, `video.mp4`) in this google drive link:
-- [Google Drive Link](https://drive.google.com/drive/folders/1hahvTVjeFKXCmzTX-Hp58iV0I7ihplSH)
+- You can find the trained model checkpoint (`checkpoint.pth`), videos (`training_video.mp4`, `video.mp4`) in this [link](https://drive.google.com/drive/folders/1hahvTVjeFKXCmzTX-Hp58iV0I7ihplSH):
 
 ## Tips & Customization
 
@@ -74,8 +73,3 @@ python lunar_lander.py
 - Visualize the agent's performance with the generated videos
 
 ---
-
-## References
-
-- [DeepMind DQN Paper (Mnih et al., 2015)](https://www.nature.com/articles/nature14236)
-- [Gymnasium LunarLander Environment](https://gymnasium.farama.org/environments/box2d/lunar_lander/)
