@@ -1,5 +1,6 @@
 # Machine Learning & Deep Learning Learning Journey
-## 📁 Current Directory Structure
+
+## Current Directory Structure
 
 ```
 ├── Model Selection/
@@ -63,59 +64,60 @@
 ```
 
 Each folder contains:
-- 📜 Python implementations of algorithms
-- 📊 Datasets (or links to them)
-- 📁 Output models or checkpoints
-- 📝 (Optional) Folder-level `README.md` files for context
+
+- Python implementations of algorithms
+- Datasets (or links to them)
+- Folder-level `README.md` files for context
 
 ---
 
-## 🔍 Topics Covered
+## Topics Covered
 
-### 🧮 Machine Learning
+### Machine Learning
+
 - **Regression**: Linear, Polynomial, SVR, Decision Tree, Random Forest
 - **Classification**: Logistic, KNN, SVM, Naive Bayes, Decision Trees, Random Forest
 - **Clustering**: K-Means, Hierarchical
 - **Association Rules**: Apriori, Eclat
 - **Model Selection**: Cross-validation, Grid Search, Boosting (XGBoost, CatBoost)
 
-### 🧠 Deep Learning
+### Deep Learning
+
 - **ANNs** for classification and regression
 - **CNNs** for image classification (cats vs. dogs)
 - **RNNs** for sequence modeling
 - **Autoencoders, SOMs, Boltzmann Machines** for unsupervised learning
 
-### 🕹️ Reinforcement Learning
+### Reinforcement Learning
+
 - **Bandit algorithms**: Thompson Sampling, UCB
 - **Value-based**: Q-Learning, Deep Q-Learning
 - **Policy-based**: PPO, A3C, Soft Actor-Critic
 - **Deep RL**: Deep Convolutional Q-Learning
 
-### 💬 NLP & LLMs
+### NLP & LLMs
+
 - **Text preprocessing**, tokenization, sentiment analysis
 - **Large Language Models** (BERT, GPT-2, etc.)
-- **Transformer fundamentals** (coming soon)
-- Dataset: `aclImdb` for training and evaluation
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Cydonia01/machine-learning.git
    cd machine-learning
    ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-Navigate to any part and run the .py or .ipynb files. Dataset paths may need adjusting based on local setup.
 
-## 📁 Data & Model Files
-Small datasets and models are included in the repo. For large files (videos, .pth, .csv > 50MB), you may find a download link or instructions inside a README.md or links.txt file in each folder.
+Navigate to any part and install the specific dependency for the algorithm and run the .py or .ipynb files. Dataset paths may need adjusting based on local setup.
 
-## 🛠️ Tools & Libraries
+## Data & Model Files
+
+Small datasets and models are included in the repo. For large files (videos, .pth, .csv > 50MB), you may find a download link or instructions inside a README.md file in each folder.
+
+## Tools & Libraries
+
 - Python 3.10+
 - Scikit-learn
 - NumPy
@@ -128,5 +130,6 @@ Small datasets and models are included in the repo. For large files (videos, .pt
 - NLTK
 - Hugging Face Transformers (for LLMs)
 
-## 📚 Notes
+## Notes
+
 - This repository is not a tutorial series, but a self-curated, project-based notebook to reinforce theory through code.
