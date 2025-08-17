@@ -111,7 +111,6 @@ Each folder contains:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Cydonia01/machine-learning.git
-   cd machine-learning
    ```
 
 Navigate to any part and install the specific dependency for the algorithm and run the .py or .ipynb files. Dataset paths may need adjusting based on local setup.
